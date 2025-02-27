@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm ="clr-namespace:PollMAui.ViewModels"
+             x:Class="PollMAui.Views.LoginPage"
+             x:DataType="vm:LoginViewModel"
+             Title="LoginPage">
+    <VerticalStackLayout>
+        <Label Text="名字：" Margin="10,10,10,10"/>
+        <Entry x:Name="NameEntry"  Margin="10,10,10,10"/>
+        <Label Text="密码:" Margin="10,10,10,10"/>
+        <Entry x:Name="PasswordEntry" IsPassword="True" Completed="Login_" Margin="10,10,10,10"/>
+        <Button Text="登录" Clicked="Login_" Margin="10,10,10,10"/>
+        <Button Text="注册" Clicked="Register_" Margin="10,10,10,10"/>
+    </VerticalStackLayout>
+</ContentPage>
