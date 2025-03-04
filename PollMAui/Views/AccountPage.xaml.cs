@@ -15,4 +15,17 @@ public partial class AccountPage : ContentPage
 			AccountViewModel.AccountInfo = await Account.GetAccountInfoAsync(Static.Token);
 		};
 	}
+
+    private async void LoginOrRegisterButton_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new LoginPage() { });
+		LoginOrRegisterButton.IsEnabled = false;
+		ExitLoginButton.IsEnabled = true;
+    }
+
+    private void ExitLoginButton_Clicked(object sender, EventArgs e)
+    {
+        LoginOrRegisterButton.IsEnabled = true;
+        ExitLoginButton.IsEnabled = false;
+    }
 }

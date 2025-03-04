@@ -4,7 +4,7 @@
              xmlns:vm ="clr-namespace:PollMAui.ViewModels"
              x:Class="PollMAui.Views.LoginPage"
              x:DataType="vm:LoginViewModel"
-             Title="LoginPage">
+             Title="用户">
     <VerticalStackLayout>
         <Label Text="名字：" Margin="10,10,10,10"/>
         <Entry x:Name="NameEntry"  Margin="10,10,10,10"/>

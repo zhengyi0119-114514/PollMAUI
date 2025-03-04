@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PollMAui.ViewModels"
+             x:Class="PollMAui.Views.QuestionPage"
+             Title="QuestionPage"
+             x:DataType="vm:QuestionViewModel">
+    <VerticalStackLayout>
+        <Editor Text="{Binding Question.Content}"
+                FontSize="20"
+                IsReadOnly="True"/>
+        <HorizontalStackLayout>
+            <Label Text="{Binding Question.CreateTime,StringFormat='创建日期:{0}'}"
+                   FontSize="15"/>
+            <Label Text="{Binding Question.Category,StringFormat='分类:{0}'}" FontSize="15" Margin="5,0,5,0"/>
+            <Label Text="{Binding Question.Difficulty,StringFormat='难度:{0}'}" FontSize="15"/>
+        </HorizontalStackLayout>
+        <ListView ItemsSource="{Binding Path=Question.Options}"
+                  SelectedItem="{Binding SelectedItem}"/>
+    </VerticalStackLayout>
+</ContentPage>

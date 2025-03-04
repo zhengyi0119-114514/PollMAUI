@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PollMAui.ViewModels"
+             xmlns:poll_mgr="clr-namespace:PollMgr;assembly=PollMgr"
+             x:Class="PollMAui.Views.QuestionListPage"
+             x:DataType="vm:QuestionListViewModel"
+             Title="QuestionListPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Text="获取"
+                x:Name="GetButton"
+                Clicked="GetButton_Clicked"/>
+        <ListView ItemsSource="{Binding Questions}"
+                  Grid.Row="1"
+                  ItemTapped="QuestionListView_ItemTapped"
+                  x:Name="QuestionListView">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="poll_mgr:Question">
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Id,StringFormat='ID :{0}'}"
+                                   FontSize="Medium"/>
+                            <Label Text="{Binding Content}"
+                                   Grid.Row="1"
+                                   FontSize="Medium"/>
+                            <Label Text="{Binding Category,StringFormat='分类:{0}'}"
+                                Grid.Row="1" Grid.Column="1" FontSize="Medium"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</ContentPage>

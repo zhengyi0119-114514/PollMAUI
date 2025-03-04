@@ -8,14 +8,11 @@
     Shell.FlyoutBehavior="Flyout"
     Title="PollMAui">
 
-    <ShellContent
-        Title="Home"
+    <ShellContent Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    <ShellContent
-        Title="User"
+        Route="MainPage"/>
+    <ShellContent Title="题目列表"
+                  ContentTemplate="{DataTemplate views:QuestionListPage}"/>
+    <ShellContent Title="用户"
         ContentTemplate="{DataTemplate views:AccountPage}"/>
-    <ShellContent 
-        Title="Login"
-        ContentTemplate="{DataTemplate views:LoginPage}"/>
 </Shell>

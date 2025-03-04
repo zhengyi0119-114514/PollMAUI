@@ -6,10 +6,24 @@
              x:DataType="vm:AccountViewModel"
              Title="AccountPage">
     <VerticalStackLayout>
+        
+        <Button Text="登录或注册" x:Name="LoginOrRegisterButton"
+                Clicked="LoginOrRegisterButton_Clicked" WidthRequest="200" HorizontalOptions="End"/>
+        <Button Text="退出登录" x:Name="ExitLoginButton" IsEnabled="False"
+                Clicked="ExitLoginButton_Clicked" WidthRequest="200" HorizontalOptions="End"/>
         <HorizontalStackLayout>
-            <Border Background="AliceBlue">
-                <Label Text="{Binding Path=AccountInfo.Id, StringFormat='Id :{0}'}"/>
+            <Border Background="AliceBlue" WidthRequest="150" 
+                    HeightRequest="60" Margin="10,10,10,10">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10,10,10,10"/>
+                </Border.StrokeShape>
+                <Editor IsReadOnly="True" FontSize="30" Text="{Binding Path=AccountInfo.Id, StringFormat='Id :{0}'}"/>
             </Border>
         </HorizontalStackLayout>
+        <Label Text="{Binding AccountInfo.Score,StringFormat='总分:{0}'}" FontSize="20"/>
+        <Label Text="{Binding AccountInfo.TotalAnwers,StringFormat='总答题数:{0}'}" FontSize="20"/>
+        <Label Text="{Binding AccountInfo.CorrectAnwers, StringFormat='正确：{0}'}" FontSize="20"/>
+        <Label Text="{Binding AccountInfo.WrongAnwers,StringFormat='错误:{0}'}" FontSize="20"/>
+        <Label Text="{Binding AccountInfo.CorrectRate, StringFormat='正确率：{0}'}" FontSize="20"/>
     </VerticalStackLayout>
 </ContentPage>
