@@ -25,5 +25,6 @@
         <Label Text="{Binding AccountInfo.CorrectAnwers, StringFormat='正确：{0}'}" FontSize="20"/>
         <Label Text="{Binding AccountInfo.WrongAnwers,StringFormat='错误:{0}'}" FontSize="20"/>
         <Label Text="{Binding AccountInfo.CorrectRate, StringFormat='正确率：{0}'}" FontSize="20"/>
+        <Button WidthRequest="150" Text="学习计划" x:Name="StudyPlanButton" Clicked="StudyPlanButton_Clicked" FontSize="20"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -11,8 +11,8 @@ namespace PollMAui.ViewModels
         public static String UserName { get; set; } = String.Empty;
         public static String Password { get; set; } = String.Empty;
         public static Timer? Timer { get; set; }
-        private static String _token = String.Empty;
-        public static String Token
+        private static String? _token = null;
+        public static String? Token
         {
             get => _token;
             set

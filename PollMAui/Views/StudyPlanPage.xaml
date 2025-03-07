@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PollMAui.Views.StudyPlanPage"
+             Title="StudyPlanPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0"
+                WidthRequest="150"
+                Text="生成学习计划"
+                Clicked="Button_Clicked"
+                FontSize="20"/>
+        <Editor IsReadOnly="True"
+                x:Name="StudyPlanEditor"
+                Grid.Row="1"
+                FontSize="20"/>
+    </Grid>
+</ContentPage>

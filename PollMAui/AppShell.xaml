@@ -13,6 +13,8 @@
         Route="MainPage"/>
     <ShellContent Title="题目列表"
                   ContentTemplate="{DataTemplate views:QuestionListPage}"/>
+    <ShellContent Title="错题列表"
+        ContentTemplate="{DataTemplate views:WrongListPage}"/>
     <ShellContent Title="用户"
         ContentTemplate="{DataTemplate views:AccountPage}"/>
 </Shell>

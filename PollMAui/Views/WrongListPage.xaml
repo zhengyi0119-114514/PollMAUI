@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:vm="clr-namespace:PollMAui.ViewModels"
+             xmlns:mgr="clr-namespace:PollMgr;assembly=PollMgr"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PollMAui.Views.WrongListPage"
+             x:DataType="vm:WrongAnswerListViewModel"
+             Title="WrongListPage">
+    <VerticalStackLayout>
+        <Button Text="Get" Clicked="Button_Clicked"/>
+        <ListView ItemsSource="{Binding WrongAnswers}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="mgr:WrongAnswer">
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding RecordId,StringFormat='id :{0}'}"
+                                    FontSize="20"/>
+                            <Label Text="{Binding Content}"
+                                    FontSize="20"
+                                    Grid.Row="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -45,7 +45,7 @@ namespace PollMgr
         {
             return $"{Id},难度：{Difficulty},标题:{Content}";
         }
-        private static List<String> parseOptions(String o)
+        public static List<String> parseOptions(String o)
         {
             var array = JArray.Parse(o);
             List<String> list = [];
